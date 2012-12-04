@@ -1,0 +1,125 @@
+/* Solarized colors */
+$base03:  #002b36
+$base02:  #073642
+$base01:  #586e75
+$base00:  #657b83
+$base0:   #839496
+$base1:   #93a1a1
+$base2:   #eee8d5
+$base3:   #fdf6e3
+$yellow:  #b58900
+$orange:  #cb4b16
+$red:     #dc322f
+$magenta: #d33682
+$violet:  #6c71c4
+$blue:    #268bd2
+$cyan:    #2aa198
+$green:   #859900
+
+@mixin solarized_rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3)
+  background-color: $rebase03
+  color: $rebase0
+  *
+    color: $rebase0
+  h1, h2, h3, h4, h5, h6
+    color: $rebase1
+    border-color: $rebase0
+  a, a:active, a:visited
+    color: $rebase1
+
+@mixin solarized_main($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3)
+  body
+    max-width: 45em
+    margin: 0 auto
+    padding: 0.5em
+    border-left: 1px solid $rebase02
+    border-right: 1px solid $rebase02
+  dd
+    font-style: italic
+    margin-bottom: 1em
+    blockquote
+      border-left: 1px solid $rebase01
+      color: $rebase01
+  dt
+    color: $yellow
+
+  dt.done
+    text-decoration: line-through
+
+  footer
+    border-top: 1px solid $rebase01
+    margin-top: 2em
+
+  .icon-check-empty:before
+    color: $cyan
+
+  .icon-check:before
+    color: $green
+
+  .icon-envelope-alt:before
+    color: $blue
+
+  .icon-phone:before
+    color: $blue
+
+  .icon-comments-alt:before
+    color: $blue
+
+  .icon-comments:before
+    color: $blue
+
+  .address
+    padding-left: 1em
+
+@mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3)
+  @include solarized_rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3)
+  @include solarized_main($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3)
+
+@mixin accentize($accent)
+  a, a:active, a:visited, code.url
+    color: $accent
+  h1, h2, h3, h4, h5, h6
+    color: $accent
+
+/* light is default mode, so pair with general html definition */
+html, .light
+  @include rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03)
+.dark
+  @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3)
+html *
+  color-profile: sRGB
+  rendering-intent: auto
+
+html.yellow, .yellow
+  @include accentize($yellow)
+html.orange, .orange
+  @include accentize($orange)
+html.red, .red
+  @include accentize($red)
+html.magenta, .magenta
+  @include accentize($magenta)
+html.violet, .violet
+  @include accentize($violet)
+html.blue, .blue
+  @include accentize($blue)
+html.cyan, .cyan
+  @include accentize($cyan)
+html.green, .green
+  @include accentize($green)
+
+blockquote
+  margin-left: 1em
+  padding-left: 1em
+  border-left: 3px solid $violet
+  blockquote
+    border-left: 3px solid $cyan
+    blockquote
+      border-left: 3px solid $magenta
+      blockquote
+        border-left: 3px solid $green
+        blockquote
+          border-left: 3px solid $orange
+          blockquote
+            border-left: 3px solid $red
+            blockquote
+              border-left: 3px solid $yellow

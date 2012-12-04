@@ -1,0 +1,43 @@
+html, body
+  font-family: "Numans", arial, helvetica, sans-serif
+h1, h2, h3, h4, h5, h6
+  font-family: "Josefin Sans", arial, helvetica, sans-serif
+
+.author,
+.date
+  font-family: "Just Me Again Down Here", cursive
+
+$fontAwesomePath: "font/fontawesome-webfont" !default
+
+@font-face
+  font-family: "FontAwesome"
+  src: url("#{$fontAwesomePath}.eot")
+  src: url("#{$fontAwesomePath}.eot") format('eot'), url("#{$fontAwesomePath}.woff") format('woff'), url("#{$fontAwesomePath}.ttf") format('truetype'), url("#{$fontAwesomePath}.svg#FontAwesomeRegular") format('svg')
+  font-weight: normal
+  font-style: normal
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before
+  font-family: FontAwesome
+  font-weight: normal
+  font-style: normal
+  display: inline-block
+  text-decoration: inherit
+
+.icon-check-empty:before
+  content: "\f096"
+
+.icon-check:before
+  content: "\f046"
+
+.icon-envelope-alt:before
+  content: "\f0e0"
+
+.icon-phone:before
+  content: "\f095"
+
+.icon-comments-alt:before
+  content: "\f0e6"
+
+.icon-comments:before
+  content: "\f086"

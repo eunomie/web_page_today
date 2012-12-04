@@ -1,0 +1,95 @@
+!!! 5
+%html(lang="en")
+	%head
+		%meta(charset="utf-8")
+		%link(rel="stylesheet" type="text/css" href="application.css")
+		%title= "Écrire une page web de nos jours"
+
+	%body(class="blue")
+		%h1
+			Écrire une page web de nos jours
+
+		%p
+			Sacré challenge, non ?
+
+		%p
+			Pour écrire
+			%a(href="http://www.winsos.net/~yves/index.php?post/2012/12/03/Ecrire-une-page-web-de-nos-jours")
+				une page web de nos jours
+			vous avez besoin d'un minimum d'outils :
+
+		%dl
+			%dt.icon-check-empty
+				Haml
+			%dd
+				Un langage de template
+
+			%dt.icon-check-empty
+				Sass
+			%dd
+				Un pré-processeur CSS
+
+			%dt.icon-check-empty
+				Solarized
+			%dd
+				Un thème sympa
+
+			%dt.icon-check-empty
+				Font Awesome
+			%dd
+				Une police d'icones
+
+			%dt.icon-check-empty
+				Ruby
+			%dd
+				Faut-il le présenter ?
+
+			%dt.icon-check-empty
+				rake
+			%dd
+				Un make en plus mieux pour ruby
+
+			%dt.icon-check-empty
+				git
+			%dd
+				Un poil mieux que svn ?
+
+			%dt.icon-check
+				Une idée de page web
+			%dd
+				Sans idée, ça va être compliqué...
+				%blockquote
+					Ça, c'est fait !
+
+
+		%footer
+			%p
+				Vous pourrez aussi remarquer que le bloc présent comporte des informations "normalisées" basées sur
+				%a(href="http://schema.org")
+					schema.org
+
+
+			%blockquote
+				%div(itemscope itemtype="http://schema.org/Person")
+					%p.icon-envelope-alt
+						%span(itemprop="name")
+							Pirouette Cacahuette
+					%div.address(itemprop="address" itemscope itemtype="http://schema.org/PostalAddress")
+						%p
+							%span(itemprop="streetAddress")
+								%i
+									Maison en carton
+								%br
+								12 rue Plop
+							%br
+							%span(itemprop="postalCode")
+								010203
+							%span(itemprop="addressLocality")
+								Paperville
+					%p
+						%span.icon-comments-alt(itemprop="email")
+							%a(href="mailto:plop@example.net")
+								plop@example.net
+					%p
+						%span.icon-phone(itemprop="telephone")
+							01 02 03 04 05
