@@ -1,5 +1,6 @@
 require 'sass'
 require 'haml'
+require 'coffee-script'
 
 task :default => :build
 
@@ -17,6 +18,9 @@ task :build do
 	html = hamlengine.render()
 
 	File.open("_site/index.html", "w") { |f| f.write(html) }
+
+	js = CoffeeScript.compile File.read("js/mickey.coffee")
+	File.open("_site/mickey.js", "w") { |f| f.write(js) }
 
 	sh 'cp -R font _site'
 end
