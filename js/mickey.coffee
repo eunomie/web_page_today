@@ -7,7 +7,7 @@ init = ->
   document.body.appendChild img
 
   window.onmousemove = (e) ->
-    img.style.left = "#{document.body.scrollLeft + e.clientX + 10}px"
-    img.style.top  = "#{document.body.scrollTop + e.clientY + 10}px"
+    img.style.left = "#{window.scrollX + e.clientX + 10}px"
+    img.style.top  = "#{window.scrollY + e.clientY + 10}px"
 
 init()
